@@ -4,19 +4,10 @@ public class GoalScript : MonoBehaviour
 {
     void OnCollisionEnter(Collision other)
     {
+        //when object collides with object carrying this component
+        //game updates to next level
+        //technically the insects could trigger this
         Debug.Log("Next level!");
         ASCIILevelLoader.instance.CurrentLevel++;
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

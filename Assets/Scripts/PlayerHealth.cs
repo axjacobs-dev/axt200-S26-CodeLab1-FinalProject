@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    //reference to scriptable object
+    //references to scriptable objects
     public PlayerData playerData;
     public GameStats gameStats;
 
@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
         //health does not reset
         if (transform.position.y < -10f)
         {
+            //adds 1 to reset counter
             ASCIILevelLoader.instance.resetCount++;
             gameStats.totalResets++;
             ASCIILevelLoader.instance.CurrentLevel = ASCIILevelLoader.instance.CurrentLevel;
@@ -26,7 +27,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        //subtracts damage from current health
         playerData.currentHealth -= amount;
+        //adds that damage to game stat "total damage"
         gameStats.totalDamageTaken += amount;
         Debug.Log("Health: " + playerData.currentHealth);
 
@@ -35,7 +38,8 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("the player is dead");
             //game over logic 
             //resets game if player dies
-            //resets health
+            //resets health to max
+            //adds 1 to reset counter
             gameStats.totalResets++;
             ASCIILevelLoader.instance.playerData.ResetHealth();
             ASCIILevelLoader.instance.CurrentLevel = 0;

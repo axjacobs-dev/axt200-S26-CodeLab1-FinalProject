@@ -10,7 +10,7 @@ public class PingPongMovement : MonoBehaviour
     // public float rangeMin = -5f;
     // //how far object will move to the right
     // public float rangeMax = 5f;
-    //no longer needs the info above because it is pulling that from the scriptable object
+    //no longer needs the info above because it is pulling that from the cicada data scriptable object
 
     void Update()
     {
