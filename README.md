@@ -1,5 +1,3 @@
-# FILL IN INFO ABOUT YOUR GAME HERE. 
+ASCII VYA
 
-DO NOT LEAVE IT LIKE THIS!!!
-
-Please? Please, give me content. I'm begging you. It's not that hard. Thanks.
+I basically have made a distilled reimagining of my thesis using ASCII level loader. It features persistent game stats (in game but also through multiple playthroughs), as well as scriptable objects and a class or two.
