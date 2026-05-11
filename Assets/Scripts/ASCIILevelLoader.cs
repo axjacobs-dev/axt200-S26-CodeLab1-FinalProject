@@ -1,4 +1,4 @@
-using System.IO;
+//using System.IO;
 using UnityEngine;
 
 public class ASCIILevelLoader : MonoBehaviour
@@ -23,9 +23,9 @@ public class ASCIILevelLoader : MonoBehaviour
     public GameObject portal;
     public GameObject cicadaPlatform;
     public GameObject Lucifer;
-    public string fileLocation; //declares string for file location
+    //public string fileLocation; //declares string for file location
 
-    string fullPath; //full path to the current level file
+    //string fullPath; //full path to the current level file
 
     int currentLevel = 0;
 
@@ -69,7 +69,7 @@ public class ASCIILevelLoader : MonoBehaviour
         playerData.ResetHealth();
 
         //creating full path to file location
-        fullPath = Application.dataPath + "/" + fileLocation;
+        //fullPath = Application.dataPath + "/" + fileLocation;
         //runs function that pulls info from file to create new level based on file contents
         LoadLevel();
     }
@@ -85,11 +85,13 @@ public class ASCIILevelLoader : MonoBehaviour
     {
         Destroy(loadedLevel);
         loadedLevel = new GameObject("Level " + currentLevel);
-        string fullPath = this.fullPath.Replace("<num>", currentLevel + "");
+        //string fullPath = this.fullPath.Replace("<num>", currentLevel + "");
         
         //read the file and put each line into a slot of the "lines" string array
         //will give us an array of strings where every string is a line in the file
-        string[] lines = File.ReadAllLines(fullPath);
+        //string[] lines = File.ReadAllLines(fullPath);
+        TextAsset levelFile = Resources.Load<TextAsset>("Levels/Level" + currentLevel);
+        string[] lines = levelFile.text.Split('\n');
       
         //goes through each line in the array and puts it into whatever variable you declare
         //but here we are using it for debugging
